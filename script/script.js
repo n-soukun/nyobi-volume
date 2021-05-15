@@ -7,7 +7,12 @@ $(function(){
             chrome.storage.local.get("video_volume", function (value) {
                 if(value){
                     const volume = value.video_volume;
-                    video.volume = Number(volume);
+                    if(volume == 0){
+                        video.volume = 1;
+                        chrome.storage.local.set({'video_volume': 1},function(){});
+                    }else{
+                        video.volume = Number(volume);
+                    }
                 }
             });
             let timeoutId = 0;
