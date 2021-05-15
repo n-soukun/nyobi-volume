@@ -1,0 +1,14 @@
+{
+    "name": "N予備校音量マネージャー",
+    "author": "Soushi Mizuno",
+    "description": "N予備校の動画音量をコントロールします",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "permissions": ["storage"],
+    "content_scripts": [
+      {
+        "matches": ["https://www.nnn.ed.nico/courses/*/chapters/*"],
+        "js": ["script/jquery-3.6.0.min.js","script/script.js"]
+      }
+    ]
+  }
